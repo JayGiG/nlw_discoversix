@@ -4,7 +4,7 @@
   padding: 0;
   border: none;
   text-decoration: none;
-  box-sizing: border-bopa;
+  box-sizing: border-box;
 }
 
 /* variáveis */
@@ -27,6 +27,7 @@ html{
 }
 
 body{
+  display: flex;
   height: 100vh;
   background: var(--background);
 }
@@ -99,7 +100,7 @@ button.outlined,
 }
 
 .content header{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 80%;
   margin: 3.5rem auto;
 }
