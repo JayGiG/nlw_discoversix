@@ -101,3 +101,68 @@
   padding: .8rem 2.4rem;
   line-height: 2.4rem;
 }
+
+/* Questions  */
+.question-wrapper{
+  /* border: 1px solid red; */
+  background: var(--light-blue);
+  margin-bottom: .8rem;
+  border-radius: .8rem;
+  padding: 2.4rem;
+}
+
+.question-wrapper .question-content{
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: flex-start;
+
+}
+
+.question-wrapper .question-content .user{
+  background: var(--blue);
+  clip-path: circle();
+  padding: 1.4rem;
+}
+
+.question-wrapper .question-content p{
+margin-left: 1.6rem;
+/* Caso seja digitado uma palavra muito grande, o layout não será quebrado */
+word-break: break-word;
+
+/* Alinha o conteudo de p no centro */
+display: flex;
+align-items: center;
+
+min-height: 5.5rem;
+}
+
+.question-wrapper .actions{
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.question-wrapper .actions > a{
+  display: flex;
+  align-items: center;
+}
+
+.question-wrapper .actions > a > img {
+  margin-right: .8rem;
+}
+
+.question-wrapper .actions > a + a{
+  /* border: 1px solid red; */
+  margin-left: 2.4rem;
+
+}
+
+/* Question read */
+.question-wrapper.read{
+  background: var(--grey-medium);
+}
+
+.question-wrapper.read .question-content .user{
+  background: var(--grey-blue);
+}

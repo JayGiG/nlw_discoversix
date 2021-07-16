@@ -11,6 +11,7 @@
   <!-- Estilos -->
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/room.css">
+  <link rel="stylesheet" href="styles/modal.css">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,7 +69,7 @@
             <div class="question-content">
 
               <div class="user">
-                <img src="assets/avatar.svg" alt="Avatar">
+                <img src="assets/user.svg" alt="Avatar">
               </div>
 
               <div class="question">
@@ -91,11 +92,121 @@
             </div>
 
           </div>
+
+          <div class="question-wrapper">
+            <div class="question-content">
+
+              <div class="user">
+                <img src="assets/user.svg" alt="Avatar">
+              </div>
+
+              <div class="question">
+                <p>Quais as tecnologias que preciso melhorar para alcançar meu próximo nível com maestria?
+                  Como definir foco e objetivo para seguir em frente ?
+                  Estou curiosa e embasbacada com esse mundo maravilhoso que é a tecnologia
+                  Confesso que quero tudo. Quero dominar o mundo !</p>
+              </div>
+
+            </div>
+
+            <div class="actions">
+
+              <a href="#" class="check">
+                <img src="assets/check.svg" alt="Marcar como lida">
+                Marcar como Lida
+              </a>
+              <a href="#" class="delete">
+                <img src="assets/trash.svg" alt="Excluir">
+                Excluir
+              </a>
+
+            </div>
+
+          </div>
+
+          <div class="question-wrapper">
+            <div class="question-content">
+
+              <div class="user">
+                <img src="assets/user.svg" alt="Avatar">
+              </div>
+
+              <div class="question">
+                <p>Qual a diferença entre const, var e let no Javascript?</p>
+              </div>
+
+            </div>
+
+            <div class="actions">
+
+              <a href="#" class="check">
+                <img src="assets/check.svg" alt="Marcar como lida">
+                Marcar como Lida
+              </a>
+              <a href="#" class="delete">
+                <img src="assets/trash.svg" alt="Excluir">
+                Excluir
+              </a>
+
+            </div>
+
+          </div>
+
+          <div class="question-wrapper read">
+            <div class="question-content">
+
+              <div class="user">
+                <img src="assets/user.svg" alt="Avatar">
+              </div>
+
+              <div class="question">
+                <p>Qual a diferença entre const, var e let no Javascript?</p>
+              </div>
+
+            </div>
+
+            <div class="actions">
+
+              <!-- <a href="#" class="check">
+                <img src="assets/check.svg" alt="Marcar como lida">
+                Marcar como Lida
+              </a>
+               -->
+              <a href="#" class="delete">
+                <img src="assets/trash.svg" alt="Excluir">
+                Excluir
+              </a>
+
+            </div>
+
+          </div>
           <!-- /referente ao quadrado com uma question -->
         </div>
       </section>
     </main>
   </div>
+
+  <!-- Modal -->
+  <div class="modal-wrapper">
+    <div class="modal">
+      <h2>Excluir</h2>
+      <p>Tem certeza que deseja excluir esta pergunta? </p>
+
+      <form action="">
+
+        <label for-id="password" class="sr only">Digite sua senha de ADMIN</label>
+        <input type="password" id="password" name="password" placeholder="Digite sua senha">
+
+        <div class="buttons">
+          <div class="button">Cancelar</div>
+          <button>Sim, excluir</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+
 </body>
 
 
