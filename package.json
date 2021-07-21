@@ -1,20 +1,25 @@
 {
   "name": "nlw06_discover",
   "version": "1.0.0",
-  "description": "",
+  "description": "Projeto página de perguntas anônimas ao dono da página. Desenvolvido na semana NLW Rocketeaseat na missão Discover",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JayGiG/nlw_discoversix.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Janiele Nogueira",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JayGiG/nlw_discoversix/issues"
   },
-  "homepage": "https://github.com/JayGiG/nlw_discoversix#readme"
+  "homepage": "https://github.com/JayGiG/nlw_discoversix#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
 }
