@@ -26,17 +26,17 @@
 <body>
   <div id="room" class="content">
     <header>
-      <a href="#">
+      <a href="/">
         <img src="images/logo.svg" alt="Rocket.Q Logo">
       </a>
 
       <div class="buttons">
-        <div class="button outlined">
-          #323243
-          <img src="images/copy.svg" alt="Copiar número da sala ">
+        <div class="button outlined" id="room-id" data-id="<%= roomId %>">
+          #<%= roomId %>
+            <img src="images/copy.svg" alt="Copiar número da sala ">
         </div>
 
-        <a href="" class="button">
+        <a href="/create-pass" class="button">
           <img src="images/users-white.svg" alt="Criar uma sala">
           Criar Sala
         </a>
@@ -47,7 +47,7 @@
     <main>
       <section id="question-form">
         <h2>Faça sua pergunta</h2>
-        <form action="">
+        <form action="/question/create/<%= roomId %>" method="POST">
           <label for-id="question" class="sr-only">O que você quer perguntar?</label>
           <textarea name="question" id="question" placeholder="O que você quer perguntar"></textarea>
 
@@ -67,125 +67,61 @@
         <div class="questions">
 
           <!-- referente ao quadrado com uma question -->
-          <div class="question-wrapper">
-            <div class="question-content">
+          <% if (isNoQuestions){ %>
+            <%- include('parts/no-question') %>
+              <% } %>
 
-              <div class="user">
-                <img src="images/user.svg" alt="Avatar">
-              </div>
+                <% questions.forEach(question=> { %>
+                  <div class="question-wrapper">
+                    <div class="question-content">
+                      <div class="user">
+                        <img src="/images/user.svg" alt="Avatar">
+                      </div>
+                      <div class="question">
+                        <p>
+                          <%= question.title %>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="actions">
+                      <a href="#" class="check" data-id="<%= question.id %>">
+                        <img src="/images/check.svg" alt="Marcar como lida">
+                        Marcar como lida
+                      </a>
+                      <a href="#" class="delete" data-id="<%= question.id %>">
+                        <img src="/images/trash.svg" alt="Excluir">
+                        Excluir
+                      </a>
+                    </div>
+                  </div>
+                  <% }); %>
 
-              <div class="question">
-                <p>Qual a diferença entre const, var e let no Javascript?</p>
-              </div>
+                    <% questionsRead.forEach(questionRead=> { %>
+                      <div class="question-wrapper read">
+                        <div class="question-content">
+                          <div class="user">
+                            <img src="/images/user.svg" alt="Avatar">
+                          </div>
+                          <div class="question">
+                            <p>
+                              <%= questionRead.title %>
+                            </p>
+                          </div>
+                        </div>
+                        <div class="actions">
+                          <a href="#" class="delete" data-id="<%= questionRead.id %>">
+                            <img src="/images/trash.svg" alt="Excluir">
+                            Excluir
+                          </a>
+                        </div>
+                      </div>
+                      <% }); %>
 
-            </div>
-
-            <div class="actions">
-
-              <a href="#" class="check">
-                <img src="images/check.svg" alt="Marcar como lida">
-                Marcar como Lida
-              </a>
-              <a href="#" class="delete">
-                <img src="images/trash.svg" alt="Excluir">
-                Excluir
-              </a>
-
-            </div>
-
-          </div>
-
-          <div class="question-wrapper">
-            <div class="question-content">
-
-              <div class="user">
-                <img src="images/user.svg" alt="Avatar">
-              </div>
-
-              <div class="question">
-                <p>Quais as tecnologias que preciso melhorar para alcançar meu próximo nível com maestria?
-                  Como definir foco e objetivo para seguir em frente ?
-                  Estou curiosa e embasbacada com esse mundo maravilhoso que é a tecnologia
-                  Confesso que quero tudo. Quero dominar o mundo !</p>
-              </div>
-
-            </div>
-
-            <div class="actions">
-
-              <a href="#" class="check">
-                <img src="images/check.svg" alt="Marcar como lida">
-                Marcar como Lida
-              </a>
-              <a href="#" class="delete">
-                <img src="images/trash.svg" alt="Excluir">
-                Excluir
-              </a>
-
-            </div>
-
-          </div>
-
-          <div class="question-wrapper">
-            <div class="question-content">
-
-              <div class="user">
-                <img src="images/user.svg" alt="Avatar">
-              </div>
-
-              <div class="question">
-                <p>Qual a diferença entre const, var e let no Javascript?</p>
-              </div>
-
-            </div>
-
-            <div class="actions">
-
-              <a href="#" class="check">
-                <img src="images/check.svg" alt="Marcar como lida">
-                Marcar como Lida
-              </a>
-              <a href="#" class="delete">
-                <img src="images/trash.svg" alt="Excluir">
-                Excluir
-              </a>
-
-            </div>
-
-          </div>
-
-          <div class="question-wrapper read">
-            <div class="question-content">
-
-              <div class="user">
-                <img src="images/user.svg" alt="Avatar">
-              </div>
-
-              <div class="question">
-                <p>Qual a diferença entre const, var e let no Javascript?</p>
-              </div>
-
-            </div>
-
-            <div class="actions">
-
-              <!-- <a href="#" class="check">
-                <img src="images/check.svg" alt="Marcar como lida">
-                Marcar como Lida
-              </a>
-               -->
-              <a href="#" class="delete">
-                <img src="images/trash.svg" alt="Excluir">
-                Excluir
-              </a>
-
-            </div>
-
-          </div>
-          <!-- /referente ao quadrado com uma question -->
         </div>
       </section>
+
     </main>
+
   </div>
 
   <!-- Modal -->
@@ -194,7 +130,7 @@
       <h2>Excluir</h2>
       <p>Tem certeza que deseja excluir esta pergunta? </p>
 
-      <form action="">
+      <form action="#" method="POST">
 
         <label for-id="password" class="sr only"></label>
         <input type="password" id="password" name="password" placeholder="Digite sua senha">
