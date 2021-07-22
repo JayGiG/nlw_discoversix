@@ -29,13 +29,13 @@ function handleClick(event, check = true) {
   const questionId = event.target.dataset.id
 
   const form = document.querySelector(".modal form")
-  form.setAttribute("action", `/question/${rommId}/${questionId}/${slug}`)
+  form.setAttribute("action", `/question/${roomId}/${questionId}/${slug}`)
 
 
   modalTitle.innerHTML = `${text} esta pergunta`
   modalDescription.innerHTML = `Tem certeza que deseja ${text.toLowerCase()} esta pergunta?`;
 
-  modalButton.innerHTML = `Sim, ${text}`
+  modalButton.innerHTML = `Sim, ${text.toLowerCase()}`
   check ? modalButton.classList.remove("red") : modalButton.classList.add("red")
 
   modal.open();
