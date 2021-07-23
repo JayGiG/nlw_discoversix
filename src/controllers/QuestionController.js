@@ -1,5 +1,4 @@
-const { Database } = require('sqlite3');
-const Databse = require('../db/config')
+const Database = require('../db/config')
 
 module.exports = {
   async index(req, res) {
